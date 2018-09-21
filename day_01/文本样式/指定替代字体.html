@@ -1,0 +1,64 @@
+<!--
+ * @author Iliya Kaslana
+ * @date 2018/9/21
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指定替代字体</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="Iliya Kaslana">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+    <style>
+        /**
+        用户的浏览器上能看到的字体来自于自己安装的字体，虽然字体可以随意设置，但是是否能看到
+        效果，还是由用户安装的字体决定。
+        为此，可以在fontfamily属性中列举一种以上的字体.浏览器会使用列表中第一个已安装在访问者系统内的字体
+
+        字体列表被称作字体栈，通常来说字体栈至少包含三个字体
+        - 希望使用的字体
+        - 一个或几个替代的字体
+        - 一个表示类属的标准字体
+         */
+        body{
+            font-family: Geneva, Tahoma, sans-serif;
+        }
+
+        h1,h2{
+            font-family: "Gill Sans","Gill Sans MT",Calibri, sans-serif ;
+        }
+    </style>
+</head>
+<body>
+<article class="architect">
+    <div class="intro">
+        <h1>Barcelona's Architect</h1>
+        <p class="subhead">Antoni Gaudí's incredible buildings bring...</p>
+        <p>Gaudí's...search for simplicity...is quite apparent in his work, from the<a href="#park-guell">Park Guell</a>... to the Church of the
+            <a href="#sagrada-familia">Sacred Family</a> ...</p>
+    </div>
+    <section class="project family">
+        <h2 id="sagrada-familia">La Sagrada Família</h2>
+        <div class="photos">
+            <img src="img/red-bubbles.jpg" ... />
+            ... 6 more images ...
+        </div>
+        <p>The complicatedly named...</p>
+        <p>The Sagrada Família attracts...</p>
+    </section>
+    <section class="project guell">
+        <h2 id="park-guell">Park Guell</h2>
+        <div class="photos">
+            ... 5 images ...
+        </div>
+        <p>The Park Guell always reminds me of ... Howard Roark in ... <a href="http://..."><cite>The Fountainhead、</cite></a>...</p>
+        <p>...now we <em>all</em> get to enjoy it...</p>
+    </section>
+</article>
+</body>
+</html>

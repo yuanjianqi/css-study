@@ -1,0 +1,60 @@
+<!--
+ * @author Iliya Kaslana
+ * @date 2018/9/20
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层叠</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="Iliya Kaslana">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+    <style>
+        /**
+        层叠发生在样式声明发生冲突的时候，浏览器会用层叠的原则从特殊性，重要性和顺序三个方面来考虑样式
+
+        - 特殊性
+            特殊性规则指的是选择器的具体程度。选择器越特殊，规则就越强。
+            遇到冲突时，优先考虑特殊性强的规则
+            + id选择器上最特殊的
+            + 继承的样式是最一般的，会被任何规则覆盖
+        - 顺序
+            当特殊性无法决定应用哪个规则时，晚出现的规则优先级更高
+        - 重要性
+            如果这还不够就在声明末尾加!important标志来使该条声明比其他的声明优先级更高
+
+        如何确定样式的优先级
+        - 嵌入样式表（位于 style 元素内）与任何链接的外部样式表之间的关系取决于它们在 HTML 中的相对位置
+        。在两者发生冲突时，如果 link 元素在 HTML 代码中出现得早， style 元素就会覆盖链接的样式表；如果
+        link 元素出现得晚（图 8.5.4），其中的样式及其包含的任何导入样式表就会覆盖 style 元素的规则
+        - 内联样式（实际上直接应用于元素）在外部样式表和嵌入样式表之后。由于顺序最靠后，其优先级是最高的
+        。一旦应用到任何地方，都会覆盖与之冲突的其他样式
+
+        - 关于相互冲突的样式的顺序对优先级的影响，有一种例外情况，就是标记!important 的样式总是具有最高
+        的优先级，无论它出现在最前、最后，还是中间。例如， p { margin-top: 1em!important; }。不过，要
+        尽量避免这种用法，极端情况除外。几乎在全部情况下，使用选择器都能达到同样的效果。此外， !important
+        让声明变得太强，如果要覆盖这样的样式，就不得不借助于更长的规则。
+         */
+        img{
+            border: .2rem solid red;
+        }
+        body{
+            background-color: thistle;
+        }
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="img">
+        <img src="img/banner.jpg" alt="这是一张图片">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!--
+ * @author Iliya Kaslana
+ * @date 2018/9/21
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>嵌入样式表</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="Iliya Kaslana">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+    <style>
+        /**
+        当且仅当 style 元素出现在 link 元素
+        后面的时候，嵌入样式表中的样式才会覆盖
+        外部样式表中的样式
+        嵌入样式表是为页面添加 CSS 的次选
+        方式。
+         */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border: .2em solid thistle;
+        }
+    </style>
+</head>
+<body>
+    <div class="img">
+        <img src="img/banner.jpg" alt="这是一张图片">
+    </div>
+</body>
+</html>

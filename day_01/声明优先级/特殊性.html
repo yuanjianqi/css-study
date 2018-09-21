@@ -1,0 +1,113 @@
+<!--
+ * @author Iliya Kaslana
+ * @date 2018/9/20
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器的特殊性</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="Iliya Kaslana">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            width: 200px;
+            height: 200px;
+        }
+
+        #test{
+            background-color: pink;
+        }
+
+        .pink{
+            background-color: deeppink !important;
+        }
+        /**
+        在css2.1中，有时某个声明极其重要，超过了其他所有的声明。这个声明就叫做重要声明
+        并允许在这些生、声明的结束分号之前插入 !important标志
+
+        标志为!important的声明并没有任何特殊性值，只不过是和非重要声明分开考虑。
+        浏览器将所有的重要声明分为一组，非重要声明分为一组。分别解决各自的冲突
+        如果一个重要声明和一个非重要声明冲突，胜出的永远是重要声明。
+
+        继承没有特殊性，甚至连0都没有
+
+        来源：
+            创作人员
+            读者
+            用户代理
+
+        声明权重
+            读者的重要声明
+            创作人员的重要声明
+            创作人员的正常声明
+            读者的正常声明
+            用户代理的声明
+
+        层叠
+            1. 找出所有的相关的规则，这些规则都包含选择器
+            2. 计算声明的优先级
+                先按来源排序
+                再按选择器的特殊性排序
+                最终按顺序排序
+         */
+
+        .font p{
+            font: 30px/1.4 "微软雅黑 Light";
+            color: pink;
+
+        }
+
+        .button{
+            padding: .3em .8em;
+            border: 1px solid rgba(0,0,0,.1);
+            background: #58a linear-gradient(hsla(0,0%,100%,.2),transparent);
+            border-radius: .2em;
+            box-shadow: 0px .05em .25em rgba(0,0,0,.5);
+            color: white;
+            text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
+            font-size: 125%;
+            line-height: 1.5;
+        }
+
+        .button{
+            background-color: deeppink;
+        }
+
+        .btnfather{
+            font-size: 30px;
+        }
+
+        hr{
+            height: 5em;
+            background-color: currentColor;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="pink" id="test" style="background-color: white">
+        <div class="font">
+            <p>
+                这是我的一段文本这是我的第二段文本
+            <hr>
+            </p>
+        </div>
+    </div>
+
+    <div class="btnfather">
+        <button class="button">Yes!</button>
+    </div>
+</body>
+</html>

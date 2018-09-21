@@ -1,0 +1,30 @@
+/**
+ * @author Iliya Kaslana
+ * @date 2018/9/21
+ * @Description: 
+ */
+/**
+针对所有媒体的样式
+ */
+
+img{
+    border: .2rem solid thistle;
+}
+
+p{
+    color: pink;
+    font-style: italic;
+}
+@media print {
+    body{
+        font-size: 25px;
+    }
+
+    p{
+        color: #000000;
+    }
+
+    img{
+        display: none;
+    }
+}
